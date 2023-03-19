@@ -97,7 +97,8 @@ class Main_Class():
             return False
     def Get_Unusual_Code(self):
         counter = Counter(self.statcode)
-        self.duplicates = [num for num, count in counter.items() if count > 1][0]
+        most_common = counter.most_common(1)[0]
+        self.duplicates = most_common[0]
         return True
 
 def Main():
